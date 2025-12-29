@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0e0e0e;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  background: #111;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: #181818;
+}
+
+nav button {
+  flex: 1;
+  background: none;
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+}
+
+nav button:hover {
+  background: #222;
+}
+
+.tab {
+  display: none;
+  padding: 15px;
+}
+
+.tab.active {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.actions button {
+  font-size: 24px;
+  padding: 10px 20px;
+}
