@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PhonkWave</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
 
@@ -14,21 +15,18 @@
 </header>
 
 <nav>
-  <button onclick="showTab('discover')">Discover</button>
-  <button onclick="showTab('trending')">Trending</button>
-  <button onclick="showTab('new')">New</button>
-  <button onclick="showTab('artists')">Artists</button>
-  <button onclick="showTab('playlists')">Playlists</button>
+  <button data-tab="discover" class="active">Discover</button>
+  <button data-tab="trending">Trending</button>
+  <button data-tab="playlists">Playlists</button>
 </nav>
 
 <main>
-
   <section id="discover" class="tab active">
-    <h2>Discover</h2>
-    <iframe id="player" width="100%" height="200" src="" allowfullscreen></iframe>
-    <div class="actions">
-      <button onclick="vote(false)">❌</button>
-      <button onclick="vote(true)">🔥</button>
+    <div id="player"></div>
+
+    <div class="swipe-actions">
+      <button id="nope">❌</button>
+      <button id="like">🔥</button>
     </div>
   </section>
 
@@ -37,23 +35,17 @@
     <div id="trendingList"></div>
   </section>
 
-  <section id="new" class="tab">
-    <h2>New Releases</h2>
-    <div id="newList"></div>
-  </section>
-
-  <section id="artists" class="tab">
-    <h2>Artists</h2>
-    <p>Follow your favorite Phonk artists</p>
-  </section>
-
   <section id="playlists" class="tab">
-    <h2>Your Playlists</h2>
-    <p>Create & manage playlists</p>
+    <h2>Your Likes</h2>
+    <div id="playlistList"></div>
   </section>
-
 </main>
 
+<script src="data.js"></script>
+<script src="player.js"></script>
+<script src="discover.js"></script>
+<script src="playlists.js"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
