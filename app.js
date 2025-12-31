@@ -1,28 +1,11 @@
-const discoverTracks = [
-  "https://www.youtube.com/embed/6x7B0GmZpVY",
-  "https://www.youtube.com/embed/VW3t6n6Y0JQ",
-  "https://www.youtube.com/embed/6fRUpN0pFHM"
-];
+document.querySelectorAll("nav button").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
 
-let currentIndex = 0;
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.tab).classList.add("active");
 
-function showTab(id) {
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.classList.remove('active');
-  });
-  document.getElementById(id).classList.add('active');
-}
-
-function loadTrack() {
-  document.getElementById("player").src = discoverTracks[currentIndex];
-}
-
-function vote(like) {
-  if (like) {
-    console.log("Liked track", currentIndex);
-  }
-  currentIndex = (currentIndex + 1) % discoverTracks.length;
-  loadTrack();
-}
-
-loadTrack();
+    if (btn.dataset.tab === "playlists") renderPlaylist();
+  };
+});
